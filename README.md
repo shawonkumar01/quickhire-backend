@@ -27,7 +27,7 @@ A RESTful API for a simple job board application built with NestJS, PostgreSQL, 
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/YOUR_USERNAME/quickhire-backend.git
+git clone https://github.com/shawonkumar01/quickhire-backend.git
 cd quickhire-backend
 ```
 
