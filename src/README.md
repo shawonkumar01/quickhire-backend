@@ -163,35 +163,35 @@ POST /api/auth/login
 ### Job
 | Field | Type | Required |
 |-------|------|----------|
-| id | integer (auto-increment) |
-| title | varchar | 
-| company | varchar |
-| location | varchar |
-| category | varchar |
-| description | text |
-| salary | varchar | 
-| jobType | varchar |
-| created_at | timestamp | 
+| id | integer (auto-increment) | ✅ |
+| title | varchar | ✅ |
+| company | varchar | ✅ |
+| location | varchar | ✅ |
+| category | varchar | ✅ |
+| description | text | ✅ |
+| salary | varchar | ❌ |
+| jobType | varchar | ❌ |
+| created_at | timestamp | ✅ |
 
 ### Application
 | Field | Type | Required |
 |-------|------|----------|
-| id | integer (auto-increment) | 
-| job_id | integer (foreign key) | 
-| name | varchar | 
-| email | varchar | 
-| resume_link | varchar | 
-| cover_note | text |
-| created_at | timestamp | 
+| id | integer (auto-increment) | ✅ |
+| job_id | integer (foreign key) | ✅ |
+| name | varchar | ✅ |
+| email | varchar | ✅ |
+| resume_link | varchar | ✅ |
+| cover_note | text | ❌ |
+| created_at | timestamp | ✅ |
 
 ### User
 | Field | Type | Required |
 |-------|------|----------|
-| id | integer (auto-increment) |
-| email | varchar | 
-| password | varchar (hashed) | 
-| role | enum (admin/user) | 
-| created_at | timestamp | 
+| id | integer (auto-increment) | ✅ |
+| email | varchar | ✅ |
+| password | varchar (hashed) | ✅ |
+| role | enum (admin/user) | ✅ |
+| created_at | timestamp | ✅ |
 
 ---
 
