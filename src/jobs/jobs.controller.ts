@@ -7,26 +7,26 @@ import { QueryJobDto } from './dto/query-jobs.dto';
 @ApiTags('Jobs')
 @Controller('jobs')
 export class JobsController {
-  constructor(private readonly jobsService: JobsService) {}
+    constructor(private readonly jobsService: JobsService) { }
 
-  @Post()
-  @HttpCode(HttpStatus.CREATED)
-  create(@Body() dto: CreateJobDto) {
-    return this.jobsService.create(dto);
-  }
+    @Post()
+    @HttpCode(HttpStatus.CREATED)
+    create(@Body() dto: CreateJobDto) {
+        return this.jobsService.create(dto);
+    }
 
-  @Get()
-  findAll(@Query() query: QueryJobDto) {
-    return this.jobsService.findAll(query);
-  }
+    @Get()
+    findAll(@Query() query: QueryJobDto) {
+        return this.jobsService.findAll(query);
+    }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.jobsService.findOne(id);
-  }
+    @Get(':id')
+    findOne(@Param('id') id: string) {
+        return this.jobsService.findOne(+id); 
+    }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.jobsService.remove(id);
-  }
+    @Delete(':id')
+    remove(@Param('id') id: string) {
+        return this.jobsService.remove(+id);
+    }
 }

@@ -7,8 +7,8 @@ import {
 
 @Entity('jobs')
 export class Job {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+  @PrimaryGeneratedColumn()
+  id: number;
 
   @Column()
   title: string;
