@@ -13,6 +13,7 @@ export class JobsController {
   constructor(private readonly jobsService: JobsService) {}
 
   // POST /api/jobs — Admin only
+  @ApiBearerAuth('JWT-auth') 
   @Post()
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('admin')
@@ -35,6 +36,7 @@ export class JobsController {
   }
 
   // DELETE /api/jobs/:id — Admin only
+  @ApiBearerAuth('JWT-auth') 
   @Delete(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('admin')
