@@ -20,14 +20,16 @@ import { AuthModule } from './auth/auth.module';
         password: configService.get<string>('DB_PASSWORD', ''),
         database: configService.get<string>('DB_NAME', 'quickhire'),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
-        synchronize: configService.get<string>('NODE_ENV') !== 'production',
+        synchronize: true,
+        ssl: process.env.NODE_ENV === 'production'
+          ? { rejectUnauthorized: false }
+          : false,
       }),
       inject: [ConfigService],
     }),
-
     AuthModule,
     JobsModule,
     ApplicationsModule,
   ],
 })
-export class AppModule {}
+export class AppModule { }
